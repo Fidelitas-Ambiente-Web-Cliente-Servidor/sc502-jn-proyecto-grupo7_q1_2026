@@ -11,18 +11,10 @@
 
 <label>Reserva:</label>
 <select name="id_reserva">
-
-<?php
-while($fila = $reservas->fetch_assoc()){
-?>
-
+    
 <option value="<?php echo $fila['id_reserva']; ?>">
 Reserva <?php echo $fila['id_reserva']; ?>
 </option>
-
-<?php
-}
-?>
 
 </select>
 
