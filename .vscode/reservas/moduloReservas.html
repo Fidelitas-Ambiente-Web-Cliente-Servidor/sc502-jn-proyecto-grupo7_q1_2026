@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Módulo de Reservas</title>
+<link rel="stylesheet" href="../css/reservas.css">
+</head>
+
+<body>
+
+<header class="header">
+<h1>Módulo de Reservas - RolvinTours</h1>
+</header>
+
+<nav class="menu">
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+</ul>
+</nav>
+
+<main class="contenido">
+
+<!-- CREAR RESERVA -->
+
+<div class="card">
+
+<h2>Crear Reserva</h2>
+
+<form id="formReserva" class="formulario">
+
+<input type="text" id="cliente" placeholder="ID Cliente" required>
+
+<input type="text" id="paquete" placeholder="ID Paquete" required>
+
+<input type="date" id="fecha" required>
+
+<select id="estado">
+
+<option value="Activa">Activa</option>
+<option value="Cancelada">Cancelada</option>
+
+</select>
+
+<button type="submit">Guardar Reserva</button>
+
+</form>
+
+</div>
+
+<!-- CONSULTAR RESERVAS -->
+
+<div class="card">
+
+<h2>Reservas Registradas</h2>
+
+<table class="tabla">
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Cliente</th>
+<th>Paquete</th>
+<th>Fecha</th>
+<th>Estado</th>
+<th>Acción</th>
+</tr>
+
+</thead>
+
+<tbody id="tablaReservas"></tbody>
+
+</table>
+
+</div>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 RolvinTours</p>
+</footer>
+
+<script src="../js/reservas.js"></script>
+
+</body>
+</html>
