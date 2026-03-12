@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Paquete Turístico | RolvinTours</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script defer src="../js/paquetes.js"></script>
+    
+    <style>
+        /* --- ESTILOS GENERALES (Mantenemos los tuyos) --- */
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; 
+        }
+
+        /* --- NUEVOS ESTILOS PARA LAS BARRAS SUPERIORES (Copiados de tu ejemplo image_3.png) --- */
+        
+        /* 1. Barra Superior Principal (Azul oscuro, texto blanco centrado) */
+        .header {
+            background-color: #1e3a5f; /* Azul oscuro exacto del ejemplo */
+            color: white;
+            padding: 20px 0; /* Padding vertical para dar altura */
+            text-align: center;
+            margin: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px; /* Tamaño de fuente similar al ejemplo */
+            font-weight: bold;
+        }
+
+        /* 2. Barra de Menú (Azul ligeramente diferente, texto blanco centrado) */
+        .menu {
+            background-color: #2c4c75; /* Azul del menú del ejemplo */
+            padding: 10px 0;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none; /* Quitamos los puntos de la lista */
+            display: inline-block; /* Centramos la lista */
+        }
+        
+        .menu ul li {
+            display: inline; /* Elementos en línea */
+        }
+        
+        .menu ul li a {
+            color: white; /* Texto blanco */
+            text-decoration: none; /* Sin subrayado */
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0 20px; /* Espaciado horizontal */
+        }
+        
+        .menu ul li a:hover {
+            text-decoration: underline; /* Subrayado al pasar el mouse */
+        }
+
+        /* --- ESTILOS DEL FORMULARIO (Mantenemos los tuyos, están perfectos) --- */
+        .contenedor-formulario {
+            width: 70%; 
+            max-width: 600px; 
+            margin: 50px auto; /* Mantenemos tu centrado */
+            background-color: white; 
+            padding: 30px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+
+        .contenedor-formulario h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px; 
+            border: 1px solid #ccc;
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #008CBA;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 140, 186, 0.3);
+        }
+
+        /* Tu botón de registrar (coherente con Reservas) */
+        .btn-registrar {
+            width: 100%; 
+            padding: 15px;
+            background-color: #1e3a5f; /* Usamos el azul oscuro para el botón también */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-registrar:hover {
+            background-color: #006687; 
+        }
+
+        .btn-volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-volver:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Registrar Nuevo Paquete Turístico</h1>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Registro</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenido">
+        
+        <div class="contenedor-formulario">
+            
+            <h2>Datos del Paquete</h2>
+
+            <form id="formPaquete">
+
+                <label for="nombre_paquete">Nombre del Paquete</label>
+                <input type="text" id="nombre_paquete" required placeholder="Ej: Aventura en el Amazonas">
+
+                <label for="destino">Destino</label>
+                <input type="text" id="destino" required placeholder="Ej: Perú, Iquitos">
+
+                <label for="precio">Precio ($)</label>
+                <input type="number" id="precio" required min="0" step="0.01" placeholder="Ej: 150.00">
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="5" placeholder="Detalles del paquete..."></textarea>
+
+                <button type="submit" class="btn-registrar">Registrar Paquete</button>
+
+            </form>
+
+            <a href="consultar.html" class="btn-volver">Volver a la Lista de Paquetes</a>
+
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #777; font-size: 14px;">
+        <p>© 2026 RolvinTours</p>
+    </footer>
+
+</body>
+</html>

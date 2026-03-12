@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Gestión de Paquetes | RolvinTours</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* Ajuste para que el fondo ocupe todo el alto real de la ventana */
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita barras de desplazamiento */
+            font-family: Arial, sans-serif; /* Fallback de fuente si el global falla */
+        }
+
+        /* --- CONTENEDOR PRINCIPAL DEL FONDO --- */
+        .inicio-hero {
+            /* --- SOLUCIÓN TÉCNICA: RUTA ABSOLUTA (Empieza con /) --- */
+            /* Esta ruta busca desde la raíz del servidor, no desde la carpeta 'paquetes' */
+            background-image: url('/css/fondo_paquetes.jpg');
+            background-size: cover; /* La imagen cubre todo el contenedor */
+            background-position: center; /* Centrada */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Efecto parallax suave */
+            height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+            width: 100%;
+            display: flex; /* Usamos flexbox para centrar todo */
+            flex-direction: column;
+            justify-content: center; /* Centrado vertical */
+            align-items: center; /* Centrado horizontal */
+            position: relative; /* Para el overlay */
+        }
+
+        /* --- OVERLAY OSCURO (Para legibilidad) --- */
+        .overlay-inicio {
+            position: absolute; /* Superpuesto sobre la imagen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% transparencia */
+            z-index: 1; /* Un nivel por encima del fondo */
+        }
+
+        /* --- CONTENIDO PRINCIPAL (Encima del overlay) --- */
+        .inicio-content {
+            position: relative; /* Superpuesto sobre el overlay */
+            z-index: 2; /* Dos niveles por encima del fondo */
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        /* --- TÍTULO Y SUBTÍTULO --- */
+        .inicio-content h1 {
+            font-size: 3.5rem; /* Título grande */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra suave */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .inicio-content h2 {
+            font-size: 1.8rem; /* Subtítulo */
+            font-weight: normal;
+            color: #ddd;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        /* --- MENÚ DE BOTONES --- */
+        .menu-inicio {
+            display: flex; /* Botones alineados horizontalmente */
+            gap: 20px; /* Espacio entre botones */
+            justify-content: center; /* Centrados horizontalmente */
+        }
+
+        .btn-inicio {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px; /* Bordes redondeados */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transición suave */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Sombra suave */
+        }
+
+        /* --- COLORES EXCLUSIVOS PARA CADA BOTÓN (Como logramos antes) --- */
+        .btn-registrar-inicio {
+            background-color: #008CBA; /* Tu azul */
+            color: white;
+            border: 2px solid transparent;
+        }
+        .btn-registrar-inicio:hover {
+            background-color: #006687;
+            transform: translateY(-2px); /* Pequeña elevación */
+        }
+
+        .btn-consultar-inicio {
+            background-color: transparent;
+            border: 2px solid #fff; /* Borde blanco sobre fondo */
+            color: white;
+        }
+        .btn-consultar-inicio:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco tenue */
+            transform: translateY(-2px); /* Pequeña elevación */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="inicio-hero">
+        
+        <div class="overlay-inicio"></div>
+
+        <div class="inicio-content">
+            
+            <h1>RolvinTours</h1>
+            <h2>Gestión de Paquetes Turísticos</h2>
+            <p style="color: #eee; font-size: 1.1rem; margin-bottom: 30px;">Seleccione una opción para comenzar.</p>
+            
+            <nav class="menu-inicio">
+                <a href="registrar.html" class="btn-inicio btn-registrar-inicio">Registrar Paquete</a>
+                <a href="consultar.html" class="btn-inicio btn-consultar-inicio">Consultar Lista</a>
+            </nav>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
