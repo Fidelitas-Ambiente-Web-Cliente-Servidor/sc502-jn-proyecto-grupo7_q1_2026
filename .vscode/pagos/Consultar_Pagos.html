@@ -1,27 +1,206 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-<title>Consultar Pagos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Pagos | RolvinTours</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('../css/fondo_consultar_pagos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f4f4f4; 
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .header, .menu, .contenido, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background-color: transparent !important;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .menu {
+            background-color: rgba(44, 76, 117, 0.8) !important;
+            padding: 10px 0;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .menu ul li {
+            display: inline;
+        }
+        
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0 20px;
+        }
+        
+        .menu ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .contenedor-tabla {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.95); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            text-align: center;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #2c4c75; 
+            color: white; 
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .btn-nuevo-pago {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            padding: 12px 25px;
+            background-color: #4CAF50; 
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn-nuevo-pago:hover {
+            background-color: #3e8e41;
+        }
+        
+        .btn-volver-pagos {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-volver-pagos:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            color: #ccc !important;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>Lista de Pagos</h2>
+    <header class="header">
+        <h1>Lista de Pagos Registrados</h1>
+    </header>
 
-<table border="1">
+    <nav class="menu">
+        <ul>
+            <li><a href="Gestión_Pagos.html">Volver a Gestión de Pagos</a></li>
+            <li><a href="../index.html">Volver al Inicio</a></li>
+        </ul>
+    </nav>
 
-<tr>
-<th>ID Pago</th>
-<th>ID Reserva</th>
-<th>Monto</th>
-<th>Método</th>
-<th>Fecha</th>
-</tr>
+    <main class="contenido">
+        
+        <section class="contenedor-tabla">
+            
+            <h2 style="text-align: center; color: #333;">Consultar Pagos</h2>
 
+            <table id="tablaPagos">
+                <thead>
+                    <tr>
+                        <th>ID Pago</th>
+                        <th>ID Reserva</th>
+                        <th>Monto ($)</th>
+                        <th>Método</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaPagos">
+                    
+                </tbody>
+            </table>
 
-</table>
+            <a href="registrar_pago.html" class="btn-nuevo-pago">Registrar Nuevo Pago</a>
 
-<br>
-<a href="../index.php">Volver al Panel</a>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 20px; font-size: 14px;">
+        <p>© 2026 RolvinTours</p>
+    </footer>
 
 </body>
 </html>

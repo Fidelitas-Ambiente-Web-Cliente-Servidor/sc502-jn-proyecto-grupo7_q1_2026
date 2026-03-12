@@ -12,30 +12,63 @@
     <script defer src="../js/paquetes.js"></script>
     
     <style>
-        /* --- ESTILOS GENERALES --- */
+      
+        html {
+            height: 100%;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Fondo gris suave igual a reservas */
+           
+            background-image: url('../css/fondo_consultas.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+         
+            background-color: #f4f4f4; 
+            position: relative; 
+            min-height: 100vh;
         }
 
-        /* --- BARRAS SUPERIORES (Estilo Reservas) --- */
+        
+        body::before {
+            content: "";
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 0; 
+        }
+
+        
+        .header, .menu, .contenido, footer {
+            position: relative;
+            z-index: 1; 
+        }
+
+        
         .header {
-            background-color: #1e3a5f; /* Azul oscuro del encabezado */
+            background-color: transparent !important; 
             color: white;
             padding: 20px 0;
             text-align: center;
             margin: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2); 
         }
         
         .header h1 {
             margin: 0;
             font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
         }
 
         .menu {
-            background-color: #2c4c75; /* Azul del menú */
+            background-color: rgba(44, 76, 117, 0.8) !important; 
             padding: 10px 0;
             text-align: center;
             margin: 0;
@@ -59,19 +92,22 @@
             font-size: 16px;
             padding: 0 20px;
         }
+        .menu ul li a:hover {
+            text-decoration: underline;
+        }
 
-        /* --- CONTENEDOR TIPO CARD --- */
+        
         .contenedor-tabla {
             width: 85%;
             max-width: 1000px;
             margin: 40px auto;
-            background-color: white;
+          
+            background-color: rgba(255, 255, 255, 0.95); 
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
         }
 
-        /* --- ESTILO DE LA TABLA (Alineado a Reservas) --- */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -85,11 +121,15 @@
         }
         
         th {
-            background-color: #2c4c75; /* Fondo azul de cabecera de tabla */
-            color: white; /* Texto blanco para legibilidad */
+            background-color: #2c4c75; 
+            color: white; 
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
         }
 
-        /* --- BOTONES --- */
+        
         .acciones {
             display: flex;
             justify-content: center;
@@ -113,16 +153,24 @@
             width: fit-content;
             margin: 20px auto 0;
             padding: 12px 25px;
-            background-color: #1e3a5f; /* Azul oscuro coherente */
+            background-color: #1e3a5f; 
             color: white;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
             text-align: center;
+            transition: background-color 0.3s;
         }
 
         .btn-nuevo:hover {
             background-color: #2c4c75;
+        }
+        
+      
+        footer p {
+            color: #ccc !important;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            margin: 0;
         }
     </style>
 </head>
@@ -135,7 +183,7 @@
 
     <nav class="menu">
         <ul>
-            <li><a href="index.html">Consultas</a></li>
+            <li><a href="index.html">Volver al Inicio</a></li>
         </ul>
     </nav>
 
@@ -158,7 +206,7 @@
                 </thead>
                 <tbody id="cuerpoTablaPaquete">
                     <tr>
-                        <td colspan="6">Cargando paquetes...</td>
+                        <td colspan="6" style="text-align: center;">Cargando paquetes...</td>
                     </tr>
                 </tbody>
             </table>
@@ -169,7 +217,7 @@
 
     </main>
 
-    <footer style="text-align: center; padding: 20px; color: #777; font-size: 14px;">
+    <footer style="text-align: center; padding: 20px; font-size: 14px;">
         <p>© 2026 RolvinTours</p>
     </footer>
 
