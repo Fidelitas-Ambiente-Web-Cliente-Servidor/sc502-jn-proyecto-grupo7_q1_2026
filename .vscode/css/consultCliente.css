@@ -1,0 +1,80 @@
+/* HEADER */
+
+.header{
+background:#1e3a5f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* MENU */
+
+.menu{
+background:#2c5282;
+padding:15px;
+}
+
+.menu ul{
+list-style:none;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+}
+
+.menu a:hover{
+text-decoration:underline;
+}
+
+
+/* CONTENIDO */
+
+main{
+padding:40px;
+display:flex;
+justify-content:center;
+}
+
+/* CARD */
+
+section{
+background:white;
+padding:30px;
+border-radius:10px;
+width:700px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TABLA */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+thead{
+background:#2c5282;
+color:white;
+}
+
+th{
+padding:12px;
+text-align:center;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+tr:hover{
+background:#2c5282;
+}
