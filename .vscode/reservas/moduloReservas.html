@@ -212,13 +212,17 @@
             <form id="formReserva" class="formulario">
 
                 <label for="cliente">ID Cliente:</label>
-                <input type="text" id="cliente" name="cliente" placeholder="Ej: 1-1111-1111" required>
+                <select id="cliente" name="id_cliente" required>
+                    <option value="">-- Seleccione un Cliente --</option>
+                </select>
 
                 <label for="paquete">ID Paquete:</label>
-                <input type="text" id="paquete" name="paquete" placeholder="Ej: PQT-001" required>
+                <select id="paquete" name="id_paquete" required>
+                    <option value="">-- Seleccione un Paquete --</option>
+                </select>
 
                 <label for="fecha">Fecha de Reserva:</label>
-                <input type="date" id="fecha" name="fecha" required>
+                <input type="date" id="fecha" name="fecha_reserva" required>
 
                 <label for="estado">Estado Inicial:</label>
                 <select id="estado" name="estado" required>
@@ -236,7 +240,7 @@
             
             <h2>Reservas Registradas</h2>
 
-            <table id="tablaReservas">
+            <table class="tablaReservas">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -247,7 +251,7 @@
                         <th>Acción</th>
                     </tr>
                 </thead>
-                <tbody id="cuerpoTablaReservas">
+                <tbody id="tablaReservas">
                     
                 </tbody>
             </table>
