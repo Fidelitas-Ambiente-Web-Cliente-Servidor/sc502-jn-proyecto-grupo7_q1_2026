@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Clientes | RolvinTours</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script defer src="../js/clientes.js"></script>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('../css/fondo_consultar_cliente.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .header, .menu, .contenido, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .menu {
+            background-color: rgba(44, 76, 117, 0.8);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .menu a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contenedor-tabla {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #2c4c75;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Clientes Registrados</h1>
+    </header>
+
+    <nav class="menu">
+        <a href="registrar.html">Registrar Cliente</a>
+        <a href="../index.html">Volver al Inicio</a>
+    </nav>
+
+    <main class="contenido">
+
+        <div class="contenedor-tabla">
+
+            <h2 style="text-align:center;">Lista de Clientes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Documento</th>
+                    </tr>
+                </thead>
+
+                <tbody id="cuerpoTablaClientes">
+                    <!-- Aquí el JS inserta los datos -->
+                </tbody>
+            </table>
+
+            <a href="registrar.html" class="btn">Registrar Nuevo Cliente</a>
+
+        </div>
+
+    </main>
+
+    <footer style="text-align:center; color:white; padding:20px;">
+        © 2026 RolvinTours
+    </footer>
+
+</body>
+</html>

@@ -16,11 +16,10 @@ services:
       MYSQL_DATABASE: tours_db
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3307:3306"
+      - "3308:3306"
     networks:
       - tours-network
 
-      # Interfaz Visual para la Base de Datos (NUEVO)
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
