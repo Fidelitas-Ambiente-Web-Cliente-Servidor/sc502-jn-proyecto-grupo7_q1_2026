@@ -1,7 +1,14 @@
-// db.php
-$host = "db"; // En Docker, el host es el nombre del servicio en el compose
+<?php
+$host = "localhost";
 $user = "root";
-$pass = "root";
-$db   = "tours_db";
+$password = "";
+$database = "rolvintours";
 
-$conn = new mysqli($host, $user, $pass, $db);
+// Crear conexión
+$conn = new mysqli($host, $user, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+?>
